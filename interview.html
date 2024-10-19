@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="first">
+    <select id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="second">
+    <button onclick="calculation()">calculation now</button>
+    <input type="text" id="res">
+
+<script>
+function calculation() {
+    var ope1 = parseInt(document.getElementById("first").value);
+    var ope2 = parseInt(document.getElementById("second").value);
+    var operation = document.getElementById("ope").value;
+    var res;
+
+    if (operation == "+") {
+        res = ope1 + ope2;
+    }
+    if (operation == "-") {
+        res = ope1 - ope2;
+    }
+    if (operation == "*") {
+        res = ope1 * ope2;
+    }
+    if (operation == "/") {
+        if (ope2 !== 0) {
+            res = ope1 / ope2;
+        } else {
+            res = "Cannot divide by zero";
+        }
+    }
+
+    document.getElementById("res").value = res;
+}
+</script>
+</body>
+</html>
